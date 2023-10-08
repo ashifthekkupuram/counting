@@ -2,5 +2,14 @@
 {% load static %}
 {% block title %}Home{% endblock title %}
 {% block content %}
-<h1>Hello World</h1>
+<br>
+<div class="d-flex justify-content-center align-items-center flex-column" style="height: 80vh;">
+    <span class="counter display-3 text-dark d-block">{{ count.count }}</span>
+    <span class="h5 text-gray">Count</span>
+    <div>
+        <button class="btn btn-outline-success">Plus</button>
+        <button class="btn btn-outline-danger">Minus</button>
+    </div>
+</div>
+
 {% endblock content %}
