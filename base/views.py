@@ -24,7 +24,10 @@ class UpdateCount(LoginRequiredMixin, View):
             count.save()
             res = 'add action has been made...'
         elif action  == 'remove':
-            count.count -=1
+            if count.count <= 0:
+                res = 'action has been cancelled because of zero limit...'
+            else:
+                count.count -=1
+                res = 'remove action has been made...'
             count.save()
-            res = 'remove action has been made...'    
         return JsonResponse(res,safe=False)   
